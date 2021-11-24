@@ -1,16 +1,16 @@
-import { createApp } from 'vue'
-import App from './App.vue'
+import { createApp } from 'vue';
 
-import { createRouter, createWebHashHistory } from 'vue-router'
-import routes from 'virtual:generated-pages'
+import { createRouter, createWebHistory } from 'vue-router';
+import routes from 'virtual:generated-pages';
+import App from './App.vue';
 
 const router = createRouter({
-  history: createWebHashHistory(),
+  history: createWebHistory(),
   routes,
-})
+});
 
-const app = createApp(App)
+const app = createApp(App);
 
-app.use(router)
+app.use(router);
 
-app.mount('#app')
+app.mount('#app');

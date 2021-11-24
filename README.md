@@ -19,7 +19,7 @@ VueJS has an issue declared where it won't check for the usage of the variables 
 
 - [x] Base Project
 - [x] File Based Router
-- [ ] 404 Route Handler
+- [x] 404 Route Handler
 - [x] Eslint Support
 - [x] Husky Pre-Commit
 - [ ] Import Aliases

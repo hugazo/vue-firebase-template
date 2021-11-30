@@ -9,11 +9,11 @@
         "sourceMap": true,
         "resolveJsonModule": true,
         "esModuleInterop": true,
+        "allowJs": true,
         "lib": [
             "esnext",
             "dom"
         ],
-        "allowJs": true,
         "baseUrl": ".",
         "paths": {
             "@assets/*": [
@@ -31,11 +31,15 @@
         }
     },
     "include": [
-        ".eslintrc.js",
         "vite.config.ts",
         "src/**/*.ts",
         "src/**/*.d.ts",
         "src/**/*.tsx",
         "src/**/*.vue"
+    ],
+    "exclude": [
+      "node_modules",
+      "dist",
+      "eslintrc.js"
     ]
 }

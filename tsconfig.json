@@ -1,5 +1,6 @@
 {
     "compilerOptions": {
+        "outDir": "dist",
         "target": "esnext",
         "useDefineForClassFields": true,
         "module": "esnext",
@@ -32,6 +33,7 @@
     },
     "include": [
         "vite.config.ts",
+        ".eslintrc.js",
         "src/**/*.ts",
         "src/**/*.d.ts",
         "src/**/*.tsx",
@@ -40,6 +42,5 @@
     "exclude": [
         "node_modules",
         "dist",
-        "eslintrc.js"
     ]
 }

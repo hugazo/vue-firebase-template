@@ -1,14 +1,16 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 
-const value = ref('Hello');
+const value = ref(0);
 
-const logMessage = () => console.log(value.value);
+const handleButtonClick = () => {
+  value.value += 1;
+};
 </script>
 
 <template lang="pug">
 div
-  button(@click="logMessage")
-    | {{ value }}
+  button(@click="handleButtonClick")
+    | Clicks: {{ value }}
   router-view
 </template>

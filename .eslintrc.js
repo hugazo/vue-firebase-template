@@ -1,9 +1,14 @@
 module.exports = {
+  settings: {
+    'import/resolver': {
+      typescript: {},
+    },
+  },
   parser: 'vue-eslint-parser',
   parserOptions: {
     parser: '@typescript-eslint/parser',
     project: [
-      './tsconfig.eslint.json',
+      './tsconfig.json',
     ],
     extraFileExtensions: ['.vue'],
   },
@@ -15,6 +20,10 @@ module.exports = {
   rules: {
     // Enable vue/script-setup-uses-vars rule
     'vue/script-setup-uses-vars': 'error',
+    'import/no-extraneous-dependencies': [
+      'error',
+      { devDependencies: true },
+    ],
   },
   overrides: [
     {

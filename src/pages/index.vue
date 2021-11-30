@@ -1,3 +1,7 @@
 <template lang="pug">
-p This is the index route
+TestComponent
 </template>
+
+<script lang="ts" setup>
+import TestComponent from '@components/demo-component.vue';
+</script>

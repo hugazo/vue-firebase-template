@@ -24,6 +24,10 @@ module.exports = {
       'error',
       { devDependencies: true },
     ],
+    'no-multiple-empty-lines': [
+      'error',
+      { max: 2 },
+    ],
   },
   overrides: [
     {

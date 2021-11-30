@@ -35,7 +35,15 @@ All folders under the `src` folder will be mapped as alias. The current structur
 
 `@pages`: `pages/`
 
+`@store`: `store/`
+
 As the project grows, more folders will be added and the tsconfig.json file will be updated with the new aliases.
+
+### State management
+
+Achieved using [pinia](https://pinia.esm.dev/)
+
+The `store/demo.ts` file has a fully working demo store. And the `App.vue` file uses this store.
 
 ## TO-DO:
 
@@ -46,7 +54,7 @@ As the project grows, more folders will be added and the tsconfig.json file will
 - [x] Husky Pre-Commit
 - [x] Import Aliases
 - [ ] Layouts Support
-- [ ] VueX Store
+- [x] State Management
 - [ ] Firebase Integrations
   - [ ] Firebase File Auto Import
   - [ ] Auth

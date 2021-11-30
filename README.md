@@ -1,5 +1,11 @@
 # Vue 3 Template
 
+## About this project
+
+I just wanted to create my own Vue project template.
+
+It works best with Visual Studio Code
+
 ## Features
 
 ### File Based Router
@@ -42,6 +48,7 @@ As the project grows, more folders will be added and the tsconfig.json file will
 - [ ] Layouts Support
 - [ ] VueX Store
 - [ ] Firebase Integrations
+  - [ ] Firebase File Auto Import
   - [ ] Auth
   - [ ] Firestore Database
   - [ ] Hosting

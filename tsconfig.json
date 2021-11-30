@@ -38,8 +38,8 @@
         "src/**/*.vue"
     ],
     "exclude": [
-      "node_modules",
-      "dist",
-      "eslintrc.js"
+        "node_modules",
+        "dist",
+        "eslintrc.js"
     ]
 }

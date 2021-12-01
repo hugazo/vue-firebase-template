@@ -1,10 +1,15 @@
 <template lang="pug">
-router-link(to="/")
-  p 404!
+router-link(:to="{ name: 'home-page' }")
+  p Back Home
 </template>
 
-<script lang="ts">
+<script>
 export default {
-  name: '404-Handler',
+  name: '404-page',
 };
 </script>
+
+<route lang="yaml">
+meta:
+  layout: '404'
+</route>

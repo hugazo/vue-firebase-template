@@ -29,6 +29,7 @@
     "vite": "^2.6.4",
     "vite-aliases": "^0.8.7",
     "vite-plugin-pages": "^0.18.2",
+    "vite-plugin-vue-layouts": "^0.5.0",
     "vue-tsc": "^0.3.0"
   },
   "lint-staged": {

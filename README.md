@@ -2,9 +2,28 @@
 
 ## About this project
 
-I just wanted to create my own Vue project template.
+I just wanted to create my own opinionated Vue project template. So i started from scratch, all the history is on this very same repo, mistakes and all.
 
-It works best with Visual Studio Code
+Works best with Visual Studio Code, it has some rules set up on the same project. Eventually i will add some recommended plugins.
+
+## Nice Things to Have
+
+- Built with Vite and for fast performance on development.
+- Node version lock via nvm.
+- Built in Typescript with Javascript support for components and scripts, just use whatever you like.
+- Use the latest Vue3 features, script setup and composition api are fully supported.
+- Supports Pug as Template Lang, no more ugly html.
+- Eslint with a comprehensible set of rules from the VueJS Team and Airbnb.
+- Pre-commit lint checking with Husky.
+- Route and alias auto generation.
+- Support for 404 handler out of the box.
+- Named route support for components with the SFC <route> tag.
+- Layouts support.
+- State Management via Pinia 🍍
+
+## Also With VsCode:
+
+- Convert HTML templates into Pug with one click.
 
 ## Features
 
@@ -29,13 +48,13 @@ All folders under the `src` folder will be mapped as alias. The current structur
 
 
 ```javascript
-routes = {
+{
   @: './src',
   @assets: './src/assets',
   @components: './src/components',
   @layouts: './src/layouts',
   @pages: './src/pages',
-  @store: './src/store',
+  @store: './src/store'
 }
 ```
 
@@ -74,6 +93,8 @@ The `store/demo.ts` file has a fully working demo store. And the `App.vue` file 
 - [x] Import Aliases
 - [x] Layouts Support
 - [x] State Management
+  - [ ] Persisted State
+- [ ] PWA support
 - [ ] Firebase Integrations
   - [ ] Firebase File Auto Import
   - [ ] Auth
@@ -82,3 +103,5 @@ The `store/demo.ts` file has a fully working demo store. And the `App.vue` file 
 - [ ] CSS Framework
 - [ ] Build Process
 - [ ] Deploy Process
+- [ ] VSCode Recommended Plugins
+- [ ] Component Testing

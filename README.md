@@ -83,6 +83,24 @@ Achieved using [`pinia`](https://pinia.esm.dev/)
 
 The `store/demo.ts` file has a fully working demo store. And the `App.vue` file uses this store.
 
+### Persisted state
+
+For persisted state, you need to declare the value of the persisted state in your store
+
+```javascript
+const useStore = defineStore('myStore',  {
+  // ... state
+  persist: {
+    enabled: true,
+    strategies: [
+      {
+        storage: localStorage, // or sessionStorage or cookieStorage
+      },
+    ],
+  },
+});
+```
+
 ## TO-DO:
 
 - [x] Base Project
@@ -93,7 +111,7 @@ The `store/demo.ts` file has a fully working demo store. And the `App.vue` file 
 - [x] Import Aliases
 - [x] Layouts Support
 - [x] State Management
-  - [ ] Persisted State
+  - [x] Persisted State
 - [ ] PWA support
 - [ ] Firebase Integrations
   - [ ] Firebase File Auto Import

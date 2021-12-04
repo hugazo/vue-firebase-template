@@ -20,6 +20,14 @@ const useStore = defineStore('demo', {
       this.clicks += 1;
     },
   },
+  persist: {
+    enabled: true,
+    strategies: [
+      {
+        storage: localStorage,
+      },
+    ],
+  },
 });
 
 if (import.meta.hot) {

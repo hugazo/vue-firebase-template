@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "pinia": "^2.0.4",
+    "pinia-plugin-persist": "^0.0.92",
     "vue": "^3.2.16",
     "vue-router": "^4.0.12"
   },

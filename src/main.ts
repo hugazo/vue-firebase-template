@@ -8,6 +8,7 @@ import generatedRoutes from 'virtual:generated-pages';
 
 // State Management
 import { createPinia } from 'pinia';
+import piniaPersist from 'pinia-plugin-persist';
 
 // Base Component
 import App from './App.vue';
@@ -27,7 +28,9 @@ const router = createRouter({
 app.use(router);
 
 // Add the state management to app
-app.use(createPinia());
+const pinia = createPinia();
+pinia.use(piniaPersist);
+app.use(pinia);
 
 // Finally mount our app
 app.mount('#app');

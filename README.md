@@ -6,6 +6,39 @@ I just wanted to create my own opinionated Vue project template. So i started fr
 
 Works best with Visual Studio Code, it has some rules set up on the same project. Eventually i will add some recommended plugins.
 
+## Setup
+
+### .env
+
+Go to your [Firebase Project](https://console.firebase.google.com) and get your config file, then create a `.env` file with the following structure:
+
+
+```bash
+# Firebase Config
+VITE_API_KEY=""
+VITE_AUTH_DOMAIN=""
+VITE_PROJECT_ID=""
+VITE_STORAGE_BUCKET=""
+VITE_MESSAGING_SENDER_ID=""
+VITE_APP_ID=""
+```
+
+### Development
+
+To run the local environment just run:
+```
+yarn dev
+```
+
+### Build
+
+To build your project just run:
+```
+yarn build
+```
+
+Then just upload your `dist/` folder to your cloud provider.
+
 ## Nice Things to Have
 
 - Built with Vite and for fast performance on development.
@@ -124,7 +157,7 @@ For persisted state, you need to declare the value of the persisted state in you
 - [x] State Management
   - [x] Persisted State
 - [ ] PWA support
-- [ ] Firebase Integrations
+- [x] Firebase
   - [ ] Firebase File Auto Import
   - [ ] Auth
   - [ ] Firestore Database

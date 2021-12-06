@@ -9,6 +9,7 @@
   "dependencies": {
     "@vueuse/core": "^7.1.2",
     "@vueuse/head": "^0.7.2",
+    "firebase": "^9.6.0",
     "pinia": "^2.0.4",
     "pinia-plugin-persist": "^0.0.92",
     "vue": "^3.2.16",

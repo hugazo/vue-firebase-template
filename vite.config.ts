@@ -5,6 +5,7 @@ import Layouts from 'vite-plugin-vue-layouts';
 import { ViteAliases } from 'vite-aliases';
 import Components from 'unplugin-vue-components/vite';
 import { NaiveUiResolver } from 'unplugin-vue-components/resolvers';
+import AutoImport from 'unplugin-auto-import/vite';
 
 export default defineConfig({
   plugins: [
@@ -21,6 +22,15 @@ export default defineConfig({
     Components({
       resolvers: [
         NaiveUiResolver(),
+      ],
+    }),
+    AutoImport({
+      imports: [
+        'vue',
+        'vue-router',
+        'pinia',
+        '@vueuse/head',
+        '@vueuse/core',
       ],
     }),
   ],

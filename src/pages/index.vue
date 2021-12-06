@@ -1,10 +1,12 @@
 <template lang="pug">
-p {{ text }}
+p This text should update the site title
+input(v-model="title")
 demo-component
 </template>
 
 <script lang="ts" setup>
-const text = 'Hello world! This is a Vue 3 Template!';
+const title = ref('Hola mundo!');
+useHead({ title });
 </script>
 
 <route lang="yaml">

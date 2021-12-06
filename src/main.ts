@@ -10,6 +10,9 @@ import generatedRoutes from 'virtual:generated-pages';
 import { createPinia } from 'pinia';
 import piniaPersist from 'pinia-plugin-persist';
 
+// Head
+import { createHead } from '@vueuse/head';
+
 // Base Component
 import App from './App.vue';
 
@@ -31,6 +34,9 @@ app.use(router);
 const pinia = createPinia();
 pinia.use(piniaPersist);
 app.use(pinia);
+
+const head = createHead();
+app.use(head);
 
 // Finally mount our app
 app.mount('#app');

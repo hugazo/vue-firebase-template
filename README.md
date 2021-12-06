@@ -22,6 +22,9 @@ Works best with Visual Studio Code, it has some rules set up on the same project
 - State Management via Pinia 🍍
 - Component Auto Import
 - Naive UI as UI Framework
+- Auto Import & Automatic Tree Shaking - No more `import ref from 'vue'`!!!!
+- @vueuse installed and auto imported by default.
+
 
 ## Also With VsCode:
 
@@ -51,6 +54,16 @@ Just use your components in your templates and they will be auto imported.
 This plugin has been already setup with the [Naive UI](https://www.naiveui.com/) framework. So the components will be auto registered in the components.d.ts file and tree shaken automatically.
 
 For documentation please visit: https://www.naiveui.com/en-US/os-theme/docs/usage-sfc
+
+### Api Auto Import
+
+Supports the following API's. For more information on the available auto imports refer click [here](https://github.com/antfu/unplugin-auto-import/blob/main/src/presets).
+
+  - [Vue](https://v3.vuejs.org/api/global-api.html)
+  - [Vue-Router](https://next.router.vuejs.org/api/)
+  - [Pinia](https://pinia.esm.dev/core-concepts/)
+  - [@vueuse](https://vueuse.org/functions.html)
+  - [@vueuse/head](https://github.com/vueuse/head#api)
 
 ### Route aliasing
 
@@ -117,6 +130,9 @@ For persisted state, you need to declare the value of the persisted state in you
   - [ ] Firestore Database
   - [ ] Hosting
 - [x] Component Auto Import
+- [x] API Auto Import
+  - [x] Better support for browser
+  - [x] HTML Head Handling
 - [x] CSS Framework
   - [x] Naive Ui
   - [x] Vfonts
@@ -125,3 +141,8 @@ For persisted state, you need to declare the value of the persisted state in you
 - [ ] Deploy Process
 - [ ] VSCode Recommended Plugins
 - [ ] Component Testing
+
+## Known Issues
+
+- .eslintrc.js: Added a temp fix for auto-imported API lint error on unplugin-auto-import - [Github Issue](https://github.com/antfu/unplugin-auto-import/issues/69)
+- tsconfig.json Added `"skipLibCheck": true` to avoid build error on pinia-persist-plugin - [Github Issue](https://github.com/Seb-L/pinia-plugin-persist/pull/19)

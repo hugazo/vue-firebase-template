@@ -39,7 +39,7 @@
         }
     },
     "include": [
-        "components.d.ts",
+        "*.d.ts",
         "vite.config.ts",
         ".eslintrc.js",
         "src/**/*.ts",

@@ -20,6 +20,8 @@ Works best with Visual Studio Code, it has some rules set up on the same project
 - Named route support for components with the SFC <route> tag.
 - Layouts support.
 - State Management via Pinia 🍍
+- Component Auto Import
+- Naive UI as UI Framework
 
 ## Also With VsCode:
 
@@ -39,6 +41,16 @@ We use the airbnb base guides for Js and TS.
 For Vue files we use the vue-essential guide.
 
 VueJS has an issue declared where it won't check for the usage of the variables defined in the script when using the setup syntax. As a workaround the check of unused variables has been disabled for Vue files inside the `/src` folder.
+
+### Component Auto Import
+
+Powered by `unplugin-vue-components`
+
+Just use your components in your templates and they will be auto imported.
+
+This plugin has been already setup with the [Naive UI](https://www.naiveui.com/) framework. So the components will be auto registered in the components.d.ts file and tree shaken automatically.
+
+For documentation please visit: https://www.naiveui.com/en-US/os-theme/docs/usage-sfc
 
 ### Route aliasing
 
@@ -81,25 +93,11 @@ meta:
 
 Achieved using [`pinia`](https://pinia.esm.dev/)
 
-The `store/demo.ts` file has a fully working demo store. And the `App.vue` file uses this store.
+The `src/store/demo.ts` file has a fully working demo store. And the `App.vue` file uses this store.
 
 ### Persisted state
 
-For persisted state, you need to declare the value of the persisted state in your store
-
-```javascript
-const useStore = defineStore('myStore',  {
-  // ... state
-  persist: {
-    enabled: true,
-    strategies: [
-      {
-        storage: localStorage, // or sessionStorage or cookieStorage
-      },
-    ],
-  },
-});
-```
+For persisted state, you need to declare the value of the persisted state in your store. Refer to the `src/store/demo.ts` file for a working example.
 
 ## TO-DO:
 
@@ -118,7 +116,11 @@ const useStore = defineStore('myStore',  {
   - [ ] Auth
   - [ ] Firestore Database
   - [ ] Hosting
-- [ ] CSS Framework
+- [x] Component Auto Import
+- [x] CSS Framework
+  - [x] Naive Ui
+  - [x] Vfonts
+  - [ ] Icons
 - [ ] Build Process
 - [ ] Deploy Process
 - [ ] VSCode Recommended Plugins

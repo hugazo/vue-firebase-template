@@ -29,6 +29,7 @@ module.exports = {
       { max: 2 },
     ],
   },
+  ignorePatterns: ['components.d.ts'],
   overrides: [
     {
       files: ['src/**/*.vue'],

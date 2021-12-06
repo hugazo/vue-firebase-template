@@ -5,10 +5,10 @@ const store = demoStore();
 </script>
 
 <template lang="pug">
-div
-  button(@click="store.sum")
+n-space
+  n-button(@click="store.sum")
     | +
-  button(@click="store.rest")
+  n-button(@click="store.rest")
     | -
   p Total: {{ store.getCounter }}
   p Clicks: {{ store.getClicks }}

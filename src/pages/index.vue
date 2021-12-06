@@ -1,9 +1,10 @@
 <template lang="pug">
-TestComponent
+p {{ text }}
+demo-component
 </template>
 
 <script lang="ts" setup>
-import TestComponent from '@components/demo-component.vue';
+const text = 'Hello world! This is a Vue 3 Template!';
 </script>
 
 <route lang="yaml">

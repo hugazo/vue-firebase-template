@@ -1,12 +1,11 @@
 <template lang="pug">
-p This text should update the site title
-input(v-model="title")
 demo-component
 </template>
 
-<script lang="ts" setup>
-const title = ref('Hola mundo!');
-useHead({ title });
+<script lang="ts">
+export default {
+  name: 'index-page',
+};
 </script>
 
 <route lang="yaml">

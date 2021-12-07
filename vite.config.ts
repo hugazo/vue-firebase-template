@@ -8,6 +8,9 @@ import { NaiveUiResolver } from 'unplugin-vue-components/resolvers';
 import AutoImport from 'unplugin-auto-import/vite';
 
 export default defineConfig({
+  envPrefix: [
+    'FIREBASE_',
+  ],
   plugins: [
     Vue(),
     Pages({

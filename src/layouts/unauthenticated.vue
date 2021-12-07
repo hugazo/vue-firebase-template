@@ -12,8 +12,8 @@ const router = useRouter();
 const { logged } = toRefs(auth);
 
 const checkAuth = (authValue: boolean) => {
-  if (!authValue) {
-    router.push({ name: 'sign-in' });
+  if (authValue) {
+    router.push({ name: 'home-page' });
   }
 };
 
@@ -26,6 +26,6 @@ watch(logged, () => {
 
 <script lang="ts">
 export default {
-  name: 'authenticated-layout',
+  name: 'unauthenticated-layout',
 };
 </script>

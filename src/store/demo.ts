@@ -1,6 +1,3 @@
-import { acceptHMRUpdate, defineStore } from 'pinia';
-
-
 const useStore = defineStore('demo', {
   state: () => ({
     counter: 0,

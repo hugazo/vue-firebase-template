@@ -10,16 +10,12 @@ import {
 
 type AuthState = {
   user: null | User;
-  loading: boolean,
-  logged: boolean,
 };
 
 const authStore = defineStore('auth', {
   state: () => {
     const state: AuthState = {
       user: null,
-      loading: false,
-      logged: false,
     };
     return state;
   },
@@ -40,15 +36,14 @@ const authStore = defineStore('auth', {
             resolve(updatedUser);
           } else {
             this.user = null;
+            resolve(null);
           }
         });
       });
     },
     async loginWithPopup() {
-      this.loading = true;
       const provider = new GoogleAuthProvider();
       await signInWithPopup(auth, provider);
-      this.loading = false;
     },
     async logout() {
       await signOut(auth);

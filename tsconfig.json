@@ -38,6 +38,9 @@
             ],
             "@services/*": [
                 "./src/services/*"
+            ],
+            "@composables/*": [
+                "./src/composables/*"
             ]
         }
     },

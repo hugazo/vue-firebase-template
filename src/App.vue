@@ -1,9 +1,8 @@
 <script lang="ts" setup>
-// App wide Auth Store Init
-import authStore from '@/store/auth';
+// Use Auth
+import useAuth from '@composables/auth';
 
-const auth = authStore();
-auth.init();
+useAuth();
 </script>
 
 <script lang="ts">
@@ -13,5 +12,6 @@ export default {
 </script>
 
 <template lang="pug">
-router-view
+n-config-provider
+  router-view
 </template>

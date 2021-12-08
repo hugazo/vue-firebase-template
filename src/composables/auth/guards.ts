@@ -1,6 +1,16 @@
 import authStore from '@store/auth';
 
-export default (
+/**
+ * Establishes a guard on the component called
+ *
+ * @remarks
+ * This hook is meant to be used in a route component and it works with the store
+ * provided by the useauth hook and redirects to the named route.
+ *
+ * @param shouldBeAuthenticated - If the user should be authenticated on the current component
+ * @param namedRoute - Name of the route that the redirect should occur
+ */
+const useAuthGuard = (
   shouldBeAuthenticated: boolean,
   namedRoute: string,
 ) => {
@@ -23,3 +33,5 @@ export default (
     immediate: true,
   });
 };
+
+export default useAuthGuard;

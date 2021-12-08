@@ -1,15 +1,16 @@
 <template lang="pug">
-n-button(
-  v-if="!auth.logged"
-  @click.prevent="auth.loginWithPopup"
-  )
-  | Sign In With Google!
-n-button(
-  v-else
-  @click.prevent="auth.logout"
-  )
-  | Logout
-n-button(@click="redirect") Home
+n-layout
+  n-button(
+    v-if="!auth.logged"
+    @click.prevent="auth.loginWithPopup"
+    )
+    | Sign In With Google!
+  n-button(
+    v-else
+    @click.prevent="auth.logout"
+    )
+    | Logout
+  n-button(@click="redirect") Home
 </template>
 
 <script lang="ts">

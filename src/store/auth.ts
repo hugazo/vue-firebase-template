@@ -1,6 +1,5 @@
-import auth from '@services/firebase';
-
 import {
+  getAuth,
   signInWithPopup,
   GoogleAuthProvider,
   onAuthStateChanged,
@@ -8,9 +7,14 @@ import {
   User,
 } from 'firebase/auth';
 
+import firebaseInstance from '@/services/firebase';
+
+
 type AuthState = {
   user: null | User;
 };
+
+const auth = getAuth(firebaseInstance);
 
 const authStore = defineStore('auth', {
   state: () => {

@@ -111,6 +111,18 @@ This plugin has been already setup with the [Naive UI](https://www.naiveui.com/)
 
 For documentation please visit: [NaiveUI Docs](https://www.naiveui.com/en-US/os-theme/docs/usage-sfc)
 
+#### Icon Auto Import
+
+By default [Tabler Icons](https://tabler-icons.io/) from Iconify are installed and auto imported as needed.
+
+Check the icons at [@iconify/tabler](https://icon-sets.iconify.design/tabler)
+
+```vue
+<template lang="pug">
+tabler-arrow-bar-right
+</template>
+```
+
 ### Api Auto Import
 
 Supports the following API's. For more information on the available auto imports refer click [here](https://github.com/antfu/unplugin-auto-import/blob/main/src/presets).
@@ -183,6 +195,7 @@ For persisted state, you need to declare the value of the persisted state in you
   - [ ] Firestore Database
   - [x] Hosting
 - [x] Component Auto Import
+  - [x] Icons auto Import
 - [x] API Auto Import
   - [x] Better support for browser
   - [x] HTML Head Handling

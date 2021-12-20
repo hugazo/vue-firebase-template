@@ -202,7 +202,7 @@ For persisted state, you need to declare the value of the persisted state in you
 - [x] CSS Framework
   - [x] Naive Ui
   - [x] Vfonts
-  - [ ] Icons
+  - [x] Icons
 - [x] Build Process
 - [ ] CI Pipelines
 - [ ] VSCode Recommended Plugins

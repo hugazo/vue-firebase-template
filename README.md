@@ -35,7 +35,7 @@ VITE_APP_ID=""
 ### Development
 
 ```sh
-# To run the local environment
+# To run the local web server and firebase emulators
 yarn dev
 ```
 
@@ -46,22 +46,23 @@ yarn dev
 yarn build
 ```
 
-Then just upload your `dist/` folder to your cloud provider.
-
 ## Deployment
 
-This app can be deployed at any server, but this is already preconfigured to deploy with firebase.
+This app can be deployed to any static web server or cloud provider. But this examples are based on firebase.
 
 ```sh
-# Add firebase tools as a global package
-yarn add global firebase-tools
 
 # Login into firebase
 firebase login
 
-# After login just deploy
-firebase deploy
+# This will deploy all the firebase code
+yarn deploy
+
+# If you want to deploy only hosting you can run
+yarn deploy:hosting
 ```
+
+Further commands can be examined in the `package.json` file.
 
 ## Nice Things to Have
 
@@ -192,8 +193,9 @@ For persisted state, you need to declare the value of the persisted state in you
 - [ ] PWA support
 - [x] Firebase
   - [x] Auth
-  - [ ] Firestore Database
+  - [x] Firestore Database
   - [x] Hosting
+  - [ ] Storage
 - [x] Component Auto Import
   - [x] Icons auto Import
 - [x] API Auto Import

@@ -8,3 +8,4 @@ dist-ssr
 .firebase
 .firebaserc
 *.log
+firebase-export-*

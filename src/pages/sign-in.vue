@@ -1,16 +1,11 @@
 <template lang="pug">
 n-layout
-  n-button(
-    v-if="!auth.logged"
-    @click.prevent="auth.loginWithPopup"
-    )
-    | Sign In With Google!
-  n-button(
-    v-else
-    @click.prevent="auth.logout"
-    )
-    | Logout
-  n-button(@click="redirect") Home
+  n-grid(
+    x-gap="12"
+    cols="1"
+  )
+    n-gi
+      Auth
 </template>
 
 <script lang="ts">
@@ -19,11 +14,8 @@ import authStore from '@/store/auth';
 export default {
   setup() {
     const auth = authStore();
-    const router = useRouter();
-    const redirect = () => router.push('/');
     return {
       auth,
-      redirect,
     };
   },
   name: 'sign-in',

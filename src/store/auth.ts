@@ -1,25 +1,38 @@
 import {
   getAuth,
-  signInWithPopup,
+  connectAuthEmulator,
   GoogleAuthProvider,
   onAuthStateChanged,
   signOut,
   User,
+  signInWithEmailAndPassword,
+  signInWithRedirect,
+  AuthProvider,
 } from 'firebase/auth';
 
 import firebaseInstance from '@/services/firebase';
 
+import firebaseConfig from '../../firebase.json';
 
 type AuthState = {
   user: null | User;
+  loading: boolean,
 };
 
 const auth = getAuth(firebaseInstance);
+
+if (process.env.NODE_ENV !== 'production') {
+  // eslint-disable-next-line no-console
+  console.log('Auth Connected To Firebase Local Emulator');
+  const { FIREBASE_EMULATOR_URL } = import.meta.env;
+  connectAuthEmulator(auth, `${FIREBASE_EMULATOR_URL}:${firebaseConfig.emulators.auth.port}`);
+}
 
 const authStore = defineStore('auth', {
   state: () => {
     const state: AuthState = {
       user: null,
+      loading: false,
     };
     return state;
   },
@@ -30,11 +43,15 @@ const authStore = defineStore('auth', {
     logged(state) : boolean {
       return Boolean(state.user);
     },
+    loadingStatus(state) : boolean {
+      return state.loading;
+    },
   },
   actions: {
     init() {
       return new Promise((resolve) => {
         onAuthStateChanged(auth, (updatedUser) => {
+          this.loading = false;
           if (updatedUser) {
             this.user = updatedUser;
             resolve(updatedUser);
@@ -45,12 +62,30 @@ const authStore = defineStore('auth', {
         });
       });
     },
-    async loginWithPopup() {
+    async signInWithGoogle() {
       const provider = new GoogleAuthProvider();
-      await signInWithPopup(auth, provider);
+      await this.loginWithRedirect(provider);
+    },
+    async loginWithRedirect(provider: AuthProvider) {
+      try {
+        this.loading = true;
+        await signInWithRedirect(auth, provider);
+      } finally {
+        this.loading = false;
+      }
+    },
+    async loginWithEmailAndPassword(email: string, password: string) {
+      try {
+        this.loading = true;
+        await signInWithEmailAndPassword(auth, email, password);
+      } finally {
+        this.loading = false;
+      }
     },
     async logout() {
+      this.loading = true;
       await signOut(auth);
+      this.loading = false;
     },
   },
   persist: {

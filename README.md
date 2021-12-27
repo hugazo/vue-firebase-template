@@ -1,5 +1,18 @@
 # Vue 3 Template
 
+## Contents
+
+- [About This Project](#about-this-project)
+- [Stack](#stack)
+- [Setup](#setup)
+- [Development](#development)
+- [Build](#build)
+- [Deployment](#deployment)
+- [Nice Things to Have](#nice-things-to-have)
+- [Features](#features)
+- [To-do](#to-do)
+- [Known Issues](#known-issues)
+
 ## About this project
 
 I just wanted to create my own opinionated Vue project template. So i started from scratch, all the history is on this very same repo, mistakes and all.

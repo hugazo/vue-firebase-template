@@ -6,6 +6,14 @@ I just wanted to create my own opinionated Vue project template. So i started fr
 
 Works best with Visual Studio Code, it has some rules set up on the same project. Eventually i will add some recommended plugins.
 
+## Stack
+
+- Made with TypeScript.
+- Vite For development and build.
+- Vue 3 as FrontEnd Library.
+- Vue Router for routing.
+- Pinia for State Management.
+
 ## Setup
 
 ### `.env`
@@ -13,6 +21,8 @@ Works best with Visual Studio Code, it has some rules set up on the same project
 Go to your [Firebase Project](https://console.firebase.google.com) and get your config file, then create a `.env` file with the following structure:
 
 ```bash
+# Firebase Emulator Base URL
+FIREBASE_EMULATOR_URL="http://localhost"
 # Firebase Config
 VITE_API_KEY=""
 VITE_AUTH_DOMAIN=""
@@ -32,34 +42,69 @@ VITE_APP_ID=""
 }
 ```
 
-### Development
+### Firebase Login
+
+You must be logged onto the firebase-cli for deployment.
 
 ```sh
-# To run the local web server and firebase emulators
+firebase login
+```
+
+## Development
+
+Runs the local vite web server and the firebase emulators.
+
+```sh
 yarn dev
 ```
 
-### Build
+Builds the project for development. Seves all the firebase emulators including hosting.
 
 ```sh
-# Build your project for production
-yarn build
+yarn dev:local
+```
+
+## Build
+
+Builds the project in development mode. Useful for debuging and testing.
+
+```sh
+yarn build:dev
+```
+
+Builds the project in production mode. Ready for deployment.
+
+```sh
+yarn build:prod
 ```
 
 ## Deployment
 
-This app can be deployed to any static web server or cloud provider. But this examples are based on firebase.
+This examples are integrated with firebase. But the build can be uploaded to any static server or cloud provider.
+
+[IMPORTANT]: You must be logged in your firebase project and completed the [setup of the project](#setup).
+
+### Full Deployment
+
+A single command can deploy the whole project. This includes Firebase Hosting, Firebase Functions, Firestore Rules and Firebase Storage Rules.
 
 ```sh
-
-# Login into firebase
-firebase login
-
-# This will deploy all the firebase code
 yarn deploy
+```
 
-# If you want to deploy only hosting you can run
+### Per-service Deployment
+
+If needed, you can deploy per-service:
+
+```sh
+# Deploys Hosting
 yarn deploy:hosting
+
+# Deploys Functions
+yarn deploy:functions
+
+# Deploys Firestore
+yarn deploy:firestore
 ```
 
 Further commands can be examined in the `package.json` file.
@@ -192,10 +237,14 @@ For persisted state, you need to declare the value of the persisted state in you
   - [x] Persisted State
 - [ ] PWA support
 - [x] Firebase
+  - [x] Emulators
+    - [x] Local Dev Env
+    - [x] Local Preview Env
+    - [x] 1-line deploy
   - [x] Auth
   - [x] Firestore Database
   - [x] Hosting
-  - [ ] Storage
+  - [x] Storage
 - [x] Component Auto Import
   - [x] Icons auto Import
 - [x] API Auto Import

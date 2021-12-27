@@ -21,13 +21,11 @@ declare module 'vue' {
     NLayoutFooter: typeof import('naive-ui')['NLayoutFooter']
     NLayoutHeader: typeof import('naive-ui')['NLayoutHeader']
     NLayoutSider: typeof import('naive-ui')['NLayoutSider']
-    NSkeleton: typeof import('naive-ui')['NSkeleton']
     NSpace: typeof import('naive-ui')['NSpace']
     NText: typeof import('naive-ui')['NText']
     SocialLogin: typeof import('./src/components/auth/social-login.vue')['default']
     TablerBrandFacebook: typeof import('~icons/tabler/brand-facebook')['default']
     TablerBrandGithub: typeof import('~icons/tabler/brand-github')['default']
-    TablerBrandGmail: typeof import('~icons/tabler/brand-gmail')['default']
     TablerBrandGoogle: typeof import('~icons/tabler/brand-google')['default']
   }
 }

@@ -21,7 +21,7 @@ type AuthState = {
 
 const auth = getAuth(firebaseInstance);
 
-if (process.env.NODE_ENV !== 'production') {
+if (import.meta.env.MODE !== 'production') {
   // eslint-disable-next-line no-console
   console.log('Auth Connected To Firebase Local Emulator');
   const { FIREBASE_EMULATOR_URL } = import.meta.env;

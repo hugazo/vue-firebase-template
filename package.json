@@ -1,6 +1,6 @@
 {
-  "name": "42academy-new",
-  "version": "0.0.0",
+  "name": "vue-firebase-template",
+  "version": "0.9.0",
   "scripts": {
     "dev": "concurrently -c \"black.bgGreen,black.bgYellow\" -p \"[{name}]\" \"yarn:vite\" \"yarn:emulators\"",
     "dev:local": "yarn build:dev && yarn emulators:full",

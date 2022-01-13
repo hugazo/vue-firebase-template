@@ -237,6 +237,10 @@ The `src/store/demo.ts` file has a fully working demo store. And the `App.vue` f
 
 For persisted state, you need to declare the value of the persisted state in your store. Refer to the `src/store/demo.ts` file for a working example.
 
+### Pwa Support
+
+The app is configured as a PWA out-of-the box. If you need more personalization, you can follow the guides on [vite-plugin-pwa](https://vite-plugin-pwa.netlify.app/)
+
 ## TO-DO
 
 - [x] Base Project
@@ -248,7 +252,7 @@ For persisted state, you need to declare the value of the persisted state in you
 - [x] Layouts Support
 - [x] State Management
   - [x] Persisted State
-- [ ] PWA support
+- [x] PWA support
 - [x] Firebase
   - [x] Emulators
     - [x] Local Dev Env

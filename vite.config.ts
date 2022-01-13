@@ -8,6 +8,7 @@ import IconsResolver from 'unplugin-icons/resolver';
 import Components from 'unplugin-vue-components/vite';
 import { NaiveUiResolver } from 'unplugin-vue-components/resolvers';
 import AutoImport from 'unplugin-auto-import/vite';
+import { VitePWA } from 'vite-plugin-pwa';
 
 export default defineConfig({
   envPrefix: [
@@ -46,5 +47,6 @@ export default defineConfig({
       ],
     }),
     Icons(),
+    VitePWA(),
   ],
 });

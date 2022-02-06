@@ -12,7 +12,12 @@ RUN yarn install
 
 # [Optional] Uncomment if you want to install an additional version of node using nvm
 # ARG EXTRA_NODE_VERSION=10
-# RUN su node -c "source /usr/local/share/nvm/nvm.sh && nvm install ${EXTRA_NODE_VERSION}"
+RUN su node -c "source /usr/local/share/nvm/nvm.sh && nvm install 16.13"
+
+# OpenJDK Needed for Firebase Tools
+RUN apt update && apt install -y \
+  default-jre  \
+  && apt clean
 
 # [Optional] Uncomment if you want to install more global node modules
 RUN su node -c "npm install -g firebase-tools"

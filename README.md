@@ -29,7 +29,9 @@ Works best with Visual Studio Code, it has some rules set up on the same project
 
 ## Setup
 
-### `.env`
+### Needed Files
+
+#### `.env`
 
 Go to your [Firebase Project](https://console.firebase.google.com) and get your config file, then create a `.env` file with the following structure:
 
@@ -45,7 +47,7 @@ VITE_MESSAGING_SENDER_ID=""
 VITE_APP_ID=""
 ```
 
-### `.firebaserc`
+#### `.firebaserc`
 
 ```json
 {
@@ -55,13 +57,29 @@ VITE_APP_ID=""
 }
 ```
 
-### Firebase Login
+### Local Setup
 
-You must be logged onto the firebase-cli for deployment.
+For local development, you need to have installed `firebase-tools` as a global package and be logged on firebase tools.
+
+```sh
+npm install -g firebase-tools
+```
 
 ```sh
 firebase login
 ```
+
+### Container
+
+This project has a Docker container preconfigured for development. To use it you will need:
+
+- [Docker](https://www.docker.com/get-started)
+- [Visual Studio Code](https://code.visualstudio.com/)
+  - [Remote Development extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack)
+
+After this, open the project in VsCode and run the **Remote-Containers: Reomen in Container** command. Then the Developer container will be created, this can take some time in the first run.
+
+For ease of use, it is suggestted to running the tasks from the `package.json` file directly from Visual Studio Code.
 
 ## Development
 
@@ -273,7 +291,10 @@ The app is configured as a PWA out-of-the box. If you need more personalization,
   - [x] Icons
 - [x] Build Process
 - [ ] CI Pipelines
-- [ ] VSCode Recommended Plugins
+- [ ] IDE Integration
+  - [x] Visual Studio Code
+  - [x] Docker Dev Container
+  - [ ] Recommended Plugins
 - [ ] Component Testing
 
 ## Known Issues

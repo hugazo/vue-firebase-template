@@ -13,6 +13,7 @@
     "deploy:firestore": "firebase deploy --only firestore:rules",
     "build:dev": "vue-tsc --noEmit && vite build --mode development",
     "build:prod": "vue-tsc --noEmit && vite build",
+    "firebase:login": "firebase login",
     "serve": "vite preview"
   },
   "dependencies": {

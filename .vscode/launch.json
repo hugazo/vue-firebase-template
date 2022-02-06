@@ -1,0 +1,17 @@
+{
+  "version": "1.0.0",
+  "configurations": [
+    {
+      "command": "yarn firebase:login",
+      "name": "Firebase Login",
+      "request": "launch",
+      "type": "node-terminal"
+    }
+    {
+      "command": "yarn dev",
+      "name": "Develop",
+      "request": "launch",
+      "type": "node-terminal"
+    },
+  ]
+}

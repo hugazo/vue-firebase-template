@@ -1,6 +1,9 @@
 <template lang="pug">
 div
-  n-card
+  n-card(
+    title="Welcome"
+    header-style="text-align: center;"
+    )
     email-login
     social-login
 </template>

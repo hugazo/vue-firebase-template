@@ -2,12 +2,12 @@
 n-form(
   :disabled="auth.loadingStatus"
   :rules="rules"
+  label-width=100
   @submit.prevent="emailPasswordLogin"
 )
   n-form-item(
     label="Email"
     label-placement="left"
-    label-width="80"
     :required="true"
   )
     n-input(
@@ -18,7 +18,6 @@ n-form(
   n-form-item(
     label="Password"
     label-placement="left"
-    label-width="80"
     :required="true"
   )
     n-input(

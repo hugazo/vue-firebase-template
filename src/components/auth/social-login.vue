@@ -21,7 +21,7 @@ n-space(justify="center")
       | Facebook
     n-button(
       :loading="auth.loadingStatus"
-      @click="console.log('Github Login')"
+      @click="auth.signInWithGithub"
       )
       template(#icon)
         n-icon

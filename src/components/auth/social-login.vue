@@ -13,7 +13,7 @@ n-space(justify="center")
       | Google
     n-button(
       :loading="auth.loadingStatus"
-      @click="console.log('Facebook Login')"
+      @click="auth.signInWithFacebook"
       )
       template(#icon)
         n-icon

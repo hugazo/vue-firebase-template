@@ -2,6 +2,7 @@ import {
   getAuth,
   connectAuthEmulator,
   GoogleAuthProvider,
+  FacebookAuthProvider,
   onAuthStateChanged,
   signOut,
   User,
@@ -64,6 +65,10 @@ const authStore = defineStore('auth', {
     },
     async signInWithGoogle() {
       const provider = new GoogleAuthProvider();
+      await this.loginWithRedirect(provider);
+    },
+    async signInWithFacebook() {
+      const provider = new FacebookAuthProvider();
       await this.loginWithRedirect(provider);
     },
     async loginWithRedirect(provider: AuthProvider) {

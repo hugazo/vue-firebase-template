@@ -1,7 +1,11 @@
 <script lang="ts" setup>
 // Use Auth
 import useAuth from '@composables/auth';
-import { darkTheme } from 'naive-ui';
+import { darkTheme, useOsTheme } from 'naive-ui';
+
+const osTheme = useOsTheme();
+
+const theme = computed(() => (osTheme.value === 'dark' ? darkTheme : null));
 
 useAuth();
 </script>
@@ -14,6 +18,6 @@ export default {
 </script>
 
 <template lang="pug">
-n-config-provider(:theme="darkTheme")
+n-config-provider(:theme="theme")
   router-view
 </template>

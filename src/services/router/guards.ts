@@ -2,8 +2,7 @@
 
 import { RouteLocation } from 'vue-router';
 
-import authStore from './store/auth';
-
+import authStore from '@store/auth';
 
 const authGuard = (
   to: RouteLocation,

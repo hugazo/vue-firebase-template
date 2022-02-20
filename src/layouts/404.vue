@@ -1,6 +1,6 @@
 <template lang="pug">
-p {{ message }}
-router-view
+n-layout
+  router-view
 </template>
 
 <script setup lang="ts">
@@ -12,3 +12,10 @@ export default {
   name: '404-layout',
 };
 </script>
+
+<style scoped>
+.n-layout {
+  height: 100vh;
+  padding-top: 40px;
+}
+</style>

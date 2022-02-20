@@ -171,6 +171,17 @@ Provided by the `vite-plugin-pages` package.
 
 The `.vue` files under the `src/pages` are mapped as a route.
 
+#### Authentication
+
+If you need to protect your route you can pass the `meta.requiresAuth` value in the `<route>` block. This will check if the user is logged in in the Auth Store.
+
+```html
+<route lang="yaml">
+meta:
+  requiresAuth: true
+</route>
+```
+
 ### Eslint Setup
 
 We use the airbnb base guides for Js and TS.
@@ -210,7 +221,7 @@ Supports the following API's. For more information on the available auto imports
 - [@vueuse](https://vueuse.org/functions.html)
 - [@vueuse/head](https://github.com/vueuse/head#api)
 
-### Route aliasing
+### Import aliasing
 
 Provided by: `vite-aliases` npm package.
 

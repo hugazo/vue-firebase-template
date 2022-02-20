@@ -1,5 +1,9 @@
 <template lang="pug">
-router-view
+n-layout(
+  position="absolute"
+)
+  Navbar
+  router-view
 </template>
 
 <script lang="ts" setup>

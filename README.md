@@ -182,6 +182,17 @@ meta:
 </route>
 ```
 
+#### Navbar Route Menu
+
+If you want to add your route to the Navbar, you can pass the `navbarDisplay` value in the `<route>` block. This will add a link in your authenticated navbar layout.
+
+```html
+<route lang="yaml">
+meta:
+  navbarDisplay: true
+</route>
+```
+
 ### Eslint Setup
 
 We use the airbnb base guides for Js and TS.

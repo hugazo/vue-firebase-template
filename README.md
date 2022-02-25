@@ -313,10 +313,10 @@ The app is configured as a PWA out-of-the box. If you need more personalization,
   - [x] Icons
 - [x] Build Process
 - [ ] CI Pipelines
-- [ ] IDE Integration
+- [x] IDE Integration
   - [x] Visual Studio Code
   - [x] Docker Dev Container
-  - [ ] Recommended Plugins
+  - [x] Recommended Plugins
 - [ ] Component Testing
 
 ## Known Issues

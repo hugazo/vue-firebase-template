@@ -27,7 +27,7 @@ if (import.meta.env.MODE !== 'production') {
   // eslint-disable-next-line no-console
   console.log('Auth Connected To Firebase Local Emulator');
   const { FIREBASE_EMULATOR_URL } = import.meta.env;
-  connectAuthEmulator(auth, `${FIREBASE_EMULATOR_URL}:${firebaseConfig.emulators.auth.port}`);
+  connectAuthEmulator(auth, `http://${FIREBASE_EMULATOR_URL}:${firebaseConfig.emulators.auth.port}`);
 }
 
 const authStore = defineStore('auth', {

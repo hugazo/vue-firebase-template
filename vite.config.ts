@@ -45,6 +45,9 @@ export default defineConfig({
         '@vueuse/head',
         '@vueuse/core',
       ],
+      eslintrc: {
+        enabled: true,
+      },
     }),
     Icons(),
     VitePWA(),

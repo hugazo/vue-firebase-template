@@ -321,5 +321,4 @@ The app is configured as a PWA out-of-the box. If you need more personalization,
 
 ## Known Issues
 
-- `.eslintrc.js`: Added a temp fix for auto-imported API lint error on unplugin-auto-import - [Github Issue](https://github.com/antfu/unplugin-auto-import/issues/69)
 - `tsconfig.json` Added `"skipLibCheck": true` to avoid build error on pinia-persist-plugin - [Github Issue](https://github.com/Seb-L/pinia-plugin-persist/pull/19)

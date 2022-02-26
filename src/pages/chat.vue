@@ -28,6 +28,8 @@ const handleRoomCreation = async () => {
   newRoom.value = '';
   creatingRoom.value = false;
 };
+
+onBeforeUnmount(() => chats.exitRooms());
 </script>
 
 <route lang="yaml">

@@ -7,6 +7,7 @@ import {
   doc,
   setDoc,
   DocumentSnapshot,
+  Unsubscribe,
 } from 'firebase/firestore';
 
 import firebaseInstance from '@/services/firebase';
@@ -28,6 +29,7 @@ interface RoomDefinition extends RoomData {
 type ChatsState = {
   initialized: boolean;
   rooms: RoomDefinition[];
+  unsuscribe: Unsubscribe | null,
 };
 
 if (import.meta.env.MODE !== 'production') {
@@ -42,6 +44,7 @@ const chatsStore = defineStore('chats', {
     const state: ChatsState = {
       initialized: false,
       rooms: [],
+      unsuscribe: null,
     };
     return state;
   },
@@ -69,11 +72,17 @@ const chatsStore = defineStore('chats', {
     initRooms() {
       this.rooms = [];
       const q = query(chats);
-      onSnapshot(q, (querySnapshot) => {
+      const unsuscribe = onSnapshot(q, (querySnapshot) => {
         querySnapshot.docChanges().forEach((change) => {
           this.handleNewDoc(change.doc, change.type);
         });
       });
+      this.unsuscribe = unsuscribe;
+    },
+    exitRooms() {
+      if (this.unsuscribe) {
+        this.unsuscribe();
+      }
     },
     handleNewDoc(docSnap: DocumentSnapshot, type: string) {
       const data = docSnap.data() as RoomData;

@@ -1,6 +1,7 @@
 {
   "recommendations": [
     "johnsoncodehk.volar",
-    "davidanson.vscode-markdownlint"
+    "davidanson.vscode-markdownlint",
+    "hollowtree.vue-snippets"
   ]
 }

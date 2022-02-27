@@ -15,5 +15,6 @@ name: 'home-page'
 meta:
   requiresAuth: true
   navbarDisplay: true
+  navbarName: 'Home'
 </route>
 

@@ -10,8 +10,9 @@ export default {
 </script>
 
 <route lang="yaml">
-name: 'Users'
+name: 'users'
 meta:
   requiresAuth: true
   navbarDisplay: true
+  navbarName: 'Users'
 </route>

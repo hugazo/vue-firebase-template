@@ -30,6 +30,8 @@ module.exports = {
       'error',
       { max: 2 },
     ],
+    // Disable Single Naming For Components
+    'vue/multi-word-component-names': 0,
   },
   ignorePatterns: ['*.d.ts'],
   overrides: [

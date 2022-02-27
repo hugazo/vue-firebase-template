@@ -8,8 +8,6 @@ declare module 'vue' {
     DemoComponent: typeof import('./src/components/demo-component.vue')['default']
     EmailLogin: typeof import('./src/components/auth/email-login.vue')['default']
     Navbar: typeof import('./src/components/navbar/index.vue')['default']
-    NBreadcrumb: typeof import('naive-ui')['NBreadcrumb']
-    NBreadcrumbItem: typeof import('naive-ui')['NBreadcrumbItem']
     NButton: typeof import('naive-ui')['NButton']
     NButtonGroup: typeof import('naive-ui')['NButtonGroup']
     NCard: typeof import('naive-ui')['NCard']

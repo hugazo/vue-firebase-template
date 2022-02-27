@@ -4,28 +4,45 @@ n-layout-header(
   position="static"
 )
   n-page-header
-    n-breadcrumb
-      template(v-for="route in routes")
-        router-link(:to="{ name: route.name }" custom v-slot="{navigate, href, route}")
-          n-breadcrumb-item(@click="navigate" :href="href") {{ route.meta.navbarName }}
+    n-menu(mode="horizontal" :options="parsedRoutes")
     template(#title)
       router-link.title(:to="{ name: 'home-page' }")
         | 42devs
     template(#extra)
       n-space
-        n-button(@click="auth.logout")
+        n-button(@click="auth.logout" v-if="user")
           | Logout {{ user.displayName }}
 </template>
 
 <script setup lang="ts">
-import allRoutes from '@composables/routes';
+import useRoutes from '@composables/routes';
 import authStore from '@store/auth';
+import { RouterLink } from 'vue-router';
 
-const routes = allRoutes().filter((r) => r.meta.navbarDisplay && r.meta.navbarName);
+const navbarRoutes = useRoutes();
 
 const auth = authStore();
-
 const user = auth.getUser;
+
+const menuLabel = (name: string, navbarName: string) => {
+  const props = {
+    to: {
+      name,
+    },
+  };
+  return h(RouterLink, props, {
+    default: () => navbarName,
+  });
+};
+
+
+const parsedRoutes = navbarRoutes.map((route) => {
+  const label = menuLabel(route.name as string, route.meta.navbarName);
+  return {
+    key: route.meta.navbarName,
+    label: () => label,
+  };
+});
 </script>
 
 <style scoped>

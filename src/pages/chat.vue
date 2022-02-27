@@ -8,17 +8,19 @@ n-layout(has-sider)
       n-form-item
         n-input(v-model:value="newRoom" :disabled="creatingRoom")
         n-button(@click="handleRoomCreation" :disabled="creatingRoom") Send
-    n-menu(:options="chats.getRoomMenuData")
-  n-layout
+    n-menu(:options="chats.getRoomMenuData" :value="chats.selectedRoom")
+  router-view
 </template>
 
 <script setup lang="ts">
-import chatsStore from '@/store/chat';
+import chatsStore from '@store/rooms';
 
+// Chats Store Setup
 const chats = chatsStore();
-
 chats.initRooms();
+onBeforeUnmount(() => chats.exitRooms());
 
+// Local Room Creation Form
 const newRoom = ref('');
 const creatingRoom = ref(false);
 
@@ -28,14 +30,11 @@ const handleRoomCreation = async () => {
   newRoom.value = '';
   creatingRoom.value = false;
 };
-
-onBeforeUnmount(() => chats.exitRooms());
 </script>
 
 <route lang="yaml">
 meta:
   requiresAuth: true
-  navbarDisplay: true
 </route>
 
 <style scoped>

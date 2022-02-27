@@ -1,3 +1,5 @@
+import { RouterLink } from 'vue-router';
+
 import {
   getFirestore,
   collection,
@@ -18,19 +20,21 @@ const db = getFirestore(firebaseInstance);
 
 const chats = collection(db, 'chats');
 
-type RoomData = {
+// Room Types Definition
+interface Room {
+  id?: string,
   name: string,
-};
-
-interface RoomDefinition extends RoomData {
-  id: string,
 }
 
-type ChatsState = {
-  initialized: boolean;
-  rooms: RoomDefinition[];
+interface Rooms extends Array<Room> {}
+
+interface ChatsState {
+  selectedRoom: string | null,
+  rooms: Rooms,
   unsuscribe: Unsubscribe | null,
-};
+}
+
+// Firebase Devtools Plugin
 
 if (import.meta.env.MODE !== 'production') {
   // eslint-disable-next-line no-console
@@ -39,10 +43,24 @@ if (import.meta.env.MODE !== 'production') {
   connectFirestoreEmulator(db, emulatorHost, firebaseConfig.emulators.firestore.port);
 }
 
-const chatsStore = defineStore('chats', {
+// Router Menu Constructor
+
+const menuLabel = (room: Room) => {
+  const props = {
+    to: {
+      name: 'chat-id',
+      params: { id: room.id },
+    },
+  };
+  return h(RouterLink, props, {
+    default: () => room.name,
+  });
+};
+
+const roomsStore = defineStore('rooms', {
   state: () => {
     const state: ChatsState = {
-      initialized: false,
+      selectedRoom: null,
       rooms: [],
       unsuscribe: null,
     };
@@ -61,10 +79,13 @@ const chatsStore = defineStore('chats', {
       return state.rooms;
     },
     getRoomMenuData(state) {
-      const mappedMenuData = state.rooms.map((room) => ({
-        key: room.id,
-        label: room.name,
-      }));
+      const mappedMenuData = state.rooms.map((room) => {
+        const label = menuLabel(room);
+        return {
+          key: room.id,
+          label: () => label,
+        };
+      });
       return mappedMenuData;
     },
   },
@@ -82,10 +103,14 @@ const chatsStore = defineStore('chats', {
     exitRooms() {
       if (this.unsuscribe) {
         this.unsuscribe();
+        this.$reset();
       }
     },
+    selectRoom(value: string | null) {
+      this.selectedRoom = value;
+    },
     handleNewDoc(docSnap: DocumentSnapshot, type: string) {
-      const data = docSnap.data() as RoomData;
+      const data = docSnap.data() as Room;
       const name: string = data.name as string;
       const room = {
         id: docSnap.id,
@@ -106,18 +131,18 @@ const chatsStore = defineStore('chats', {
         name,
       });
     },
-    newRoom(room: RoomDefinition) {
+    newRoom(room: Room) {
       this.rooms.push(room);
     },
-    modifyRoom(room: RoomDefinition) {
-      const roomIndex = this.rooms.findIndex((value: RoomDefinition) => value.id === room.id);
+    modifyRoom(room: Room) {
+      const roomIndex = this.rooms.findIndex((value: Room) => value.id === room.id);
       this.rooms[roomIndex] = room;
     },
-    deleteRoom(room: RoomDefinition) {
-      const roomIndex = this.rooms.findIndex((value: RoomDefinition) => value.id === room.id);
+    deleteRoom(room: Room) {
+      const roomIndex = this.rooms.findIndex((value: Room) => value.id === room.id);
       this.rooms.splice(roomIndex, 1);
     },
   },
 });
 
-export default chatsStore;
+export default roomsStore;

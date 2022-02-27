@@ -1,5 +1,5 @@
 <template lang="pug">
-p Non Routed
+p No Room Selected
 </template>
 
 <script setup lang="ts">
@@ -7,7 +7,7 @@ import chatsStore from '@/store/rooms';
 
 const chats = chatsStore();
 
-chats.selectRoom(null);
+onBeforeMount(() => chats.selectRoom(null));
 </script>
 
 <route lang="yaml">

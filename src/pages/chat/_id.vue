@@ -1,7 +1,6 @@
 <template lang="pug">
 n-layout
-  p(v-if="$attrs.id") {{ $attrs.id }}
-  p(v-else) Non Attrs
+  p(v-if="$attrs.id") Selected: {{ $attrs.id }}
 </template>
 
 <script lang="ts" setup>
@@ -11,5 +10,7 @@ const attrs = useAttrs();
 
 const chats = chatsStore();
 
-onBeforeUpdate(() => chats.selectRoom(attrs.id));
+onBeforeMount(() => chats.selectRoom(attrs.id as string));
+
+onBeforeUpdate(() => chats.selectRoom(attrs.id as string));
 </script>

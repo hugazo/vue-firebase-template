@@ -2,8 +2,9 @@
   "name": "vue-firebase-template",
   "version": "0.9.0",
   "scripts": {
-    "dev": "concurrently -c \"black.bgGreen,black.bgYellow\" -p \"[{name}]\" \"yarn:vite\" \"yarn:emulators\"",
+    "dev": "concurrently -c \"black.bgGreen,black.bgYellow,black.bgBlue\" -p \"[{name}]\" \"yarn:vite\" \"yarn:emulators\" \"yarn:functions\"",
     "dev:local": "yarn build:dev && yarn emulators:full",
+    "functions": "cd functions && yarn dev",
     "vite": "vite",
     "emulators": "firebase emulators:start --only auth,firestore,functions,storage --import=.firebase --export-on-exit",
     "emulators:full": "firebase emulators:start --import=.firebase --export-on-exit",

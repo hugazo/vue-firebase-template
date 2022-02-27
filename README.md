@@ -83,7 +83,11 @@ For ease of use, it is suggestted to running the tasks from the `package.json` f
 
 ## Development
 
-Runs the local vite web server and the firebase emulators.
+This is the swiss knife, runs:
+
+- Vite local Server: With hot reload and HMR support.
+- Firebase Emulators: With local environment autosave.
+- Firebase Functions Compiler: With hot reload and emulator auto restart.
 
 ```sh
 yarn dev

@@ -11,12 +11,12 @@ const {
 
 
 const firebaseConfig = {
-  apiKey: FIREBASE_API_KEY?.toString(),
-  authDomain: FIREBASE_AUTH_DOMAIN?.toString(),
-  projectId: FIREBASE_PROJECT_ID?.toString(),
-  storageBucket: FIREBASE_STORAGE_BUCKET?.toString(),
-  messagingSenderId: FIREBASE_MESSAGING_SENDER_ID?.toString(),
-  appId: FIREBASE_APP_ID?.toString(),
+  apiKey: FIREBASE_API_KEY as string,
+  authDomain: FIREBASE_AUTH_DOMAIN as string,
+  projectId: FIREBASE_PROJECT_ID as string,
+  storageBucket: FIREBASE_STORAGE_BUCKET as string,
+  messagingSenderId: FIREBASE_MESSAGING_SENDER_ID as string,
+  appId: FIREBASE_APP_ID as string,
 };
 
 const firebaseInstance = initializeApp(firebaseConfig);

@@ -1,6 +1,6 @@
-import { useRouter } from 'vue-router';
+import { useRouter, RouteRecordNormalized } from 'vue-router';
 
-export default () => {
+export default (): RouteRecordNormalized[] => {
   const router = useRouter();
 
   const routes = router.getRoutes();

@@ -184,12 +184,13 @@ meta:
 
 #### Navbar Route Menu
 
-If you want to add your route to the Navbar, you can pass the `navbarDisplay` value in the `<route>` block. This will add a link in your authenticated navbar layout.
+If you want to add your route to the Navbar, you can pass the `navbarDisplay` (boolean) `navbarName` (string) in the `<route>` meta block. This will add a link in your authenticated navbar layout.
 
 ```html
 <route lang="yaml">
 meta:
   navbarDisplay: true
+  navbarName: 'Example'
 </route>
 ```
 

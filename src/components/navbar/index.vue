@@ -5,23 +5,23 @@ n-layout-header(
 )
   n-page-header
     n-breadcrumb
-      template(v-for="route in navigationRoutes")
+      template(v-for="route in routes")
         router-link(:to="{ name: route.name }" custom v-slot="{navigate, href, route}")
-          n-breadcrumb-item(@click="navigate" :href="href") {{ route.name }}
+          n-breadcrumb-item(@click="navigate" :href="href") {{ route.meta.navbarName }}
     template(#title)
-      router-link(:to="{ name: 'home-page' }")
+      router-link.title(:to="{ name: 'home-page' }")
         | 42devs
     template(#extra)
       n-space
         n-button(@click="auth.logout")
-          | Logout
+          | Logout {{ user.displayName }}
 </template>
 
-<script setup>
-import routes from '@composables/routes';
+<script setup lang="ts">
+import allRoutes from '@composables/routes';
 import authStore from '@store/auth';
 
-const navigationRoutes = routes().filter((route) => route.meta.navbarDisplay);
+const routes = allRoutes().filter((r) => r.meta.navbarDisplay && r.meta.navbarName);
 
 const auth = authStore();
 
@@ -29,7 +29,7 @@ const user = auth.getUser;
 </script>
 
 <style scoped>
-a {
+.title {
   text-decoration: none;
   color: inherit;
 }

@@ -36,15 +36,15 @@ Works best with Visual Studio Code, it has some rules set up on the same project
 Go to your [Firebase Project](https://console.firebase.google.com) and get your config file, then create a `.env` file with the following structure:
 
 ```bash
-# Firebase Emulator Base URL
-FIREBASE_EMULATOR_URL="http://localhost"
-# Firebase Config
-VITE_API_KEY=""
-VITE_AUTH_DOMAIN=""
-VITE_PROJECT_ID=""
-VITE_STORAGE_BUCKET=""
-VITE_MESSAGING_SENDER_ID=""
-VITE_APP_ID=""
+# Firebase Emulator
+FIREBASE_EMULATOR_URL="localhost"
+# Firebase App
+FIREBASE_API_KEY=""
+FIREBASE_AUTH_DOMAIN=""
+FIREBASE_PROJECT_ID=""
+FIREBASE_STORAGE_BUCKET=""
+FIREBASE_MESSAGING_SENDER_ID=""
+FIREBASE_APP_ID=""
 ```
 
 #### `.firebaserc`

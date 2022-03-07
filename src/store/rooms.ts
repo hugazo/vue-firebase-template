@@ -1,5 +1,8 @@
 import { RouterLink } from 'vue-router';
 
+import authStore from '@/composables/auth';
+import { User } from 'firebase/auth';
+
 import {
   getFirestore,
   collection,
@@ -18,12 +21,13 @@ import firebaseConfig from '../../firebase.json';
 
 const db = getFirestore(firebaseInstance);
 
-const chats = collection(db, 'chats');
+const rooms = collection(db, 'rooms');
 
 // Room Types Definition
 interface Room {
   id?: string,
   name: string,
+  owner: string,
 }
 
 interface Rooms extends Array<Room> {}
@@ -92,7 +96,7 @@ const roomsStore = defineStore('rooms', {
   actions: {
     initRooms() {
       this.rooms = [];
-      const q = query(chats);
+      const q = query(rooms);
       const unsuscribe = onSnapshot(q, (querySnapshot) => {
         querySnapshot.docChanges().forEach((change) => {
           this.handleNewDoc(change.doc, change.type);
@@ -111,10 +115,9 @@ const roomsStore = defineStore('rooms', {
     },
     handleNewDoc(docSnap: DocumentSnapshot, type: string) {
       const data = docSnap.data() as Room;
-      const name: string = data.name as string;
       const room = {
         id: docSnap.id,
-        name,
+        ...data,
       };
       if (type === 'added') {
         this.newRoom(room);
@@ -127,8 +130,11 @@ const roomsStore = defineStore('rooms', {
       }
     },
     async createRoom(name: string) {
-      await setDoc(doc(chats), {
+      const auth = authStore();
+      const user = auth.store.getUser as User;
+      await setDoc(doc(rooms), {
         name,
+        owner: user.uid,
       });
     },
     newRoom(room: Room) {

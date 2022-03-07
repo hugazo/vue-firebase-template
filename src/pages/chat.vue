@@ -2,18 +2,20 @@
 n-layout(has-sider)
   n-layout-sider(
     bordered
-    width="200"
+    width="280"
   )
-    n-form
-      n-form-item
-        n-input(v-model:value="newRoom" :disabled="creatingRoom")
-        n-button(@click="handleRoomCreation" :disabled="creatingRoom") Send
+    RoomCreation(
+      @create-room="handleRoomCreation"
+      :creating-room="creatingRoom"
+      button-text="New Room"
+    )
     n-menu(:options="chats.getRoomMenuData" :value="chats.selectedRoom")
   router-view
 </template>
 
 <script setup lang="ts">
 import chatsStore from '@store/rooms';
+import RoomCreation1 from '@components/rooms/roomCreation.vue';
 
 // Chats Store Setup
 const chats = chatsStore();
@@ -21,14 +23,14 @@ chats.initRooms();
 onBeforeUnmount(() => chats.exitRooms());
 
 // Local Room Creation Form
-const newRoom = ref('');
 const creatingRoom = ref(false);
 
-const handleRoomCreation = async () => {
+const handleRoomCreation = async (roomName: string) => {
+  if (roomName.length === 0) return false;
   creatingRoom.value = true;
-  await chats.createRoom(newRoom.value);
-  newRoom.value = '';
+  await chats.createRoom(roomName);
   creatingRoom.value = false;
+  return true;
 };
 </script>
 

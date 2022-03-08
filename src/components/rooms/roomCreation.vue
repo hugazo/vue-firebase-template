@@ -12,8 +12,6 @@ n-form
 </template>
 
 <script setup lang="ts">
-import { defineProps, defineEmits } from 'vue';
-
 const props = defineProps({
   creatingRoom: Boolean,
   buttonText: String,

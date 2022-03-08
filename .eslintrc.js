@@ -34,6 +34,9 @@ module.exports = {
     'vue/multi-word-component-names': 0,
   },
   ignorePatterns: ['*.d.ts'],
+  env: {
+    'vue/setup-compiler-macros': true,
+  },
   overrides: [
     {
       files: ['src/**/*.vue'],

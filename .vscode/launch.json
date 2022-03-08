@@ -6,7 +6,7 @@
       "name": "Firebase Login",
       "request": "launch",
       "type": "node-terminal"
-    }
+    },
     {
       "command": "yarn dev",
       "name": "Develop",

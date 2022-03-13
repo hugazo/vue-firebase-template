@@ -4,13 +4,15 @@ n-layout
 </template>
 
 <script lang="ts" setup>
-import chatsStore from '@/store/rooms';
+import roomsStore from '@/store/rooms';
 
 const attrs = useAttrs();
 
-const chats = chatsStore();
+const rooms = roomsStore();
 
-onBeforeMount(() => chats.selectRoom(attrs.id as string));
+const selectRoom = () => rooms.selectRoom(attrs.id as string);
 
-onBeforeUpdate(() => chats.selectRoom(attrs.id as string));
+onBeforeMount(selectRoom);
+
+onBeforeUpdate(selectRoom);
 </script>

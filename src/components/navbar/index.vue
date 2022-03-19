@@ -12,6 +12,7 @@ n-layout-header(
       n-space
         n-button(@click="auth.logout" v-if="user")
           | Logout {{ user.displayName }}
+        Theme-Selector
 </template>
 
 <script setup lang="ts">

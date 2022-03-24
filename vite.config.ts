@@ -22,7 +22,6 @@ export default defineConfig({
     Layouts(),
     ViteAliases({
       useConfig: true,
-      useRelativePaths: true,
       useTypescript: true,
     }),
     Components({

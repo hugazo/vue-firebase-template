@@ -5,7 +5,7 @@ import themeStore from '@store/theme';
 
 const theme = themeStore();
 
-const currentTheme = computed(() => theme.getCurrentTheme);
+const currentTheme = computed(() => theme.getTheme.resolver());
 
 useAuth();
 </script>

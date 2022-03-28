@@ -13,6 +13,7 @@
     "createApp": true,
     "createEventHook": true,
     "createGlobalState": true,
+    "createInjectionState": true,
     "createPinia": true,
     "createReactiveFn": true,
     "createSharedComposable": true,

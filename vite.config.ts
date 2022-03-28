@@ -48,7 +48,9 @@ export default defineConfig({
         enabled: true,
       },
     }),
-    Icons(),
+    Icons({
+      compiler: 'vue3',
+    }),
     VitePWA(),
   ],
 });

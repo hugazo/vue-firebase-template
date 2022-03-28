@@ -1,27 +1,24 @@
 import { darkTheme, useOsTheme } from 'naive-ui';
+import { BuiltInGlobalTheme } from 'naive-ui/lib/themes/interface';
 
+const osThemeRef = useOsTheme();
+
+type ThemeResolver = null | BuiltInGlobalTheme;
 
 const themeStore = defineStore('theme', {
   state: () => ({
     themes: [
       {
-        name: 'light',
-        icon: 'tabler-sun',
-        resolver: () => null,
+        name: 'Light',
+        resolver: (): ThemeResolver => null,
       },
       {
-        name: 'dark',
-        icon: 'tabler-moon',
-        resolver: () => darkTheme,
+        name: 'Dark',
+        resolver: (): ThemeResolver => darkTheme,
       },
       {
-        name: 'system',
-        icon: 'tabler-computer',
-        resolver: () => {
-          const osThemeRef = useOsTheme();
-          const value = osThemeRef.value === 'dark' ? darkTheme : null;
-          return value;
-        },
+        name: 'System',
+        resolver: (): ThemeResolver => (osThemeRef.value === 'dark' ? darkTheme : null),
       },
     ],
     selectedTheme: 0,

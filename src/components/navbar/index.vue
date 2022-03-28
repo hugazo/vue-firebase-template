@@ -3,11 +3,8 @@ n-layout-header(
   bordered
   position="static"
 )
-  n-page-header
+  n-page-header(title="42 Devs")
     n-menu(mode="horizontal" :options="parsedRoutes")
-    template(#title)
-      router-link.title(:to="{ name: 'home-page' }")
-        | 42devs
     template(#extra)
       n-space
         n-button(@click="auth.logout" v-if="user")
@@ -45,10 +42,3 @@ const parsedRoutes = navbarRoutes.map((route) => {
   };
 });
 </script>
-
-<style scoped>
-.title {
-  text-decoration: none;
-  color: inherit;
-}
-</style>

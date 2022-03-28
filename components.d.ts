@@ -18,10 +18,12 @@ declare module 'vue' {
     NGrid: typeof import('naive-ui')['NGrid']
     NIcon: typeof import('naive-ui')['NIcon']
     NInput: typeof import('naive-ui')['NInput']
+    NInputGroup: typeof import('naive-ui')['NInputGroup']
     NLayout: typeof import('naive-ui')['NLayout']
     NLayoutContent: typeof import('naive-ui')['NLayoutContent']
     NLayoutFooter: typeof import('naive-ui')['NLayoutFooter']
     NLayoutHeader: typeof import('naive-ui')['NLayoutHeader']
+    NLayoutSider: typeof import('naive-ui')['NLayoutSider']
     NMenu: typeof import('naive-ui')['NMenu']
     NPageHeader: typeof import('naive-ui')['NPageHeader']
     NSpace: typeof import('naive-ui')['NSpace']
@@ -31,6 +33,9 @@ declare module 'vue' {
     TablerBrandFacebook: typeof import('~icons/tabler/brand-facebook')['default']
     TablerBrandGithub: typeof import('~icons/tabler/brand-github')['default']
     TablerBrandGoogle: typeof import('~icons/tabler/brand-google')['default']
+    TablerDeviceLaptop: typeof import('~icons/tabler/device-laptop')['default']
+    TablerMoon: typeof import('~icons/tabler/moon')['default']
+    TablerSun: typeof import('~icons/tabler/sun')['default']
     ThemeSelector: typeof import('./src/components/navbar/theme-selector.vue')['default']
   }
 }

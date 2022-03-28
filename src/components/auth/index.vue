@@ -6,6 +6,10 @@ div
     )
     email-login
     social-login
+    n-space(justify="center")
+      n-text Select Your Theme:
+    n-space(justify="center")
+      theme-selector
 </template>
 
 <script lang="ts">

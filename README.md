@@ -326,4 +326,9 @@ The app is configured as a PWA out-of-the box. If you need more personalization,
 
 ## Known Issues
 
-- `tsconfig.json` Added `"skipLibCheck": true` to avoid build error on pinia-persist-plugin - [Github Issue](https://github.com/Seb-L/pinia-plugin-persist/pull/19)
+- `tsconfig.json` Added `"skipLibCheck": true` to avoid build errors on:
+  - `unplugin` [Github Issue](https://github.com/unjs/unplugin/issues/49)
+  - `unplugin-icons` [Github Issue](https://github.com/antfu/unplugin-icons/issues/155)
+  - `vite-plugin-pages` [Github Issue](https://github.com/hannoeru/vite-plugin-pages/issues/194)
+  - `pinia-persist-plugin` [Github Issue](https://github.com/Seb-L/pinia-plugin-persist/pull/19)
+  - `vite` [Github Issue](https://github.com/vitejs/vite/pull/7605)

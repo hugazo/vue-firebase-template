@@ -16,9 +16,6 @@
             "esnext",
             "dom"
         ],
-        "types": [
-            "unplugin-icons/types/vue"
-        ],
         "baseUrl": ".",
         "paths": {
             "@assets/*": [

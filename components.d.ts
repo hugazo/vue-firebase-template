@@ -2,7 +2,7 @@
 // We suggest you to commit this file into source control
 // Read more: https://github.com/vuejs/vue-next/pull/3399
 
-declare module 'vue' {
+declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     Auth: typeof import('./src/components/auth/index.vue')['default']
     DemoComponent: typeof import('./src/components/demo-component.vue')['default']
@@ -26,9 +26,12 @@ declare module 'vue' {
     NLayoutSider: typeof import('naive-ui')['NLayoutSider']
     NMenu: typeof import('naive-ui')['NMenu']
     NPageHeader: typeof import('naive-ui')['NPageHeader']
+    NResult: typeof import('naive-ui')['NResult']
     NSpace: typeof import('naive-ui')['NSpace']
     NText: typeof import('naive-ui')['NText']
     RoomCreation: typeof import('./src/components/rooms/roomCreation.vue')['default']
+    RouterLink: typeof import('vue-router')['RouterLink']
+    RouterView: typeof import('vue-router')['RouterView']
     SocialLogin: typeof import('./src/components/auth/social-login.vue')['default']
     TablerBrandFacebook: typeof import('~icons/tabler/brand-facebook')['default']
     TablerBrandGithub: typeof import('~icons/tabler/brand-github')['default']

@@ -18,7 +18,7 @@
 		"dbaeumer.vscode-eslint",
 		"toba.vsfire",
 		"johnsoncodehk.vscode-typescript-vue-plugin",
-		"johnsoncodehk.volar",
+		"Vue.volar",
 		"hollowtree.vue-snippets"
 	],
 

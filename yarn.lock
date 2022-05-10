@@ -3972,6 +3972,13 @@ pinia@^2.0.14:
     "@vue/devtools-api" "^6.1.4"
     vue-demi "*"
 
+postcss-rtlcss@^3.6.3:
+  version "3.6.3"
+  resolved "https://registry.yarnpkg.com/postcss-rtlcss/-/postcss-rtlcss-3.6.3.tgz#aabd1122a5b082157ea06d606c441002c1060030"
+  integrity sha512-jJlS7gM5JPH8n/hcHqqekK8wusdFEFYi79mBvAK2GWvl3aehOFgj9vEMwFzUTJrrErakYTgiQ+uuGAzdL98g0g==
+  dependencies:
+    rtlcss "^3.5.0"
+
 postcss-selector-parser@^6.0.9:
   version "6.0.10"
   resolved "https://registry.yarnpkg.com/postcss-selector-parser/-/postcss-selector-parser-6.0.10.tgz#79b61e2c0d1bfc2602d549e11d0876256f8df88d"
@@ -3980,7 +3987,7 @@ postcss-selector-parser@^6.0.9:
     cssesc "^3.0.0"
     util-deprecate "^1.0.2"
 
-postcss@^8.1.10, postcss@^8.4.13:
+postcss@^8.1.10, postcss@^8.3.11, postcss@^8.4.13:
   version "8.4.13"
   resolved "https://registry.yarnpkg.com/postcss/-/postcss-8.4.13.tgz#7c87bc268e79f7f86524235821dfdf9f73e5d575"
   integrity sha512-jtL6eTBrza5MPzy8oJLFuUscHDXTV5KcLlqAWHl5q5WYRfnNRGSmOZmOZ1T6Gy7A99mOZfqungmZMpMmCVJ8ZA==
@@ -4317,6 +4324,16 @@ rollup@^2.43.1, rollup@^2.59.0, rollup@^2.70.2:
   integrity sha512-KqtR2YcO35/KKijg4nx4STO3569aqCUeGRkKWnJ6r+AvBBrVY9L4pmf4NHVrQr4mTOq6msbohflxr2kpihhaOA==
   optionalDependencies:
     fsevents "~2.3.2"
+
+rtlcss@^3.5.0:
+  version "3.5.0"
+  resolved "https://registry.yarnpkg.com/rtlcss/-/rtlcss-3.5.0.tgz#c9eb91269827a102bac7ae3115dd5d049de636c3"
+  integrity sha512-wzgMaMFHQTnyi9YOwsx9LjOxYXJPzS8sYnFaKm6R5ysvTkwzHiB0vxnbHwchHQT65PTdBjDG21/kQBWI7q9O7A==
+  dependencies:
+    find-up "^5.0.0"
+    picocolors "^1.0.0"
+    postcss "^8.3.11"
+    strip-json-comments "^3.1.1"
 
 run-parallel@^1.1.9:
   version "1.2.0"

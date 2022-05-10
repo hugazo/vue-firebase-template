@@ -33,7 +33,10 @@ module.exports = {
     // Disable Single Naming For Components
     'vue/multi-word-component-names': 0,
   },
-  ignorePatterns: ['*.d.ts'],
+  ignorePatterns: [
+    '*.d.ts',
+    '*.config.js',
+  ],
   env: {
     'vue/setup-compiler-macros': true,
   },

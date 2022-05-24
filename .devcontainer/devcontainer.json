@@ -19,7 +19,8 @@
 		"toba.vsfire",
 		"johnsoncodehk.vscode-typescript-vue-plugin",
 		"Vue.volar",
-		"hollowtree.vue-snippets"
+		"hollowtree.vue-snippets",
+		"abdelaziz18003.quasar-snippets"
 	],
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.

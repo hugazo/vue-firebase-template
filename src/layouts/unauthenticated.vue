@@ -1,5 +1,6 @@
 <template lang="pug">
-router-view
+q-layout
+  router-view
 </template>
 
 <script lang="ts" setup>

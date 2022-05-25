@@ -13,5 +13,7 @@ export default {
 </script>
 
 <template lang="pug">
-router-view
+q-layout(view="hHh lpR fFf")
+  q-page-container
+    router-view
 </template>

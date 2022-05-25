@@ -1,16 +1,21 @@
 <template lang="pug">
-n-layout
-  n-layout-content
-    n-grid(
-      :cols="12"
-      item-responsive
-      responsive="screen"
-    )
-      n-gi(
-        offset="0 s:1 m:2 l:3 xl:4"
-        span="12 s:10 m:8 l:6 xl:4"
-      )
-        Auth
+q-page.window-height.window-width.row.justify-center.items-center
+  .column
+    .row.justify-center
+      h5 42devs - Sign-in
+    .row
+      Auth
+//- n-layout-content
+//-   n-grid(
+//-     :cols="12"
+//-     item-responsive
+//-     responsive="screen"
+//-   )
+//-     n-gi(
+//-       offset="0 s:1 m:2 l:3 xl:4"
+//-       span="12 s:10 m:8 l:6 xl:4"
+//-     )
+//-       Auth
 </template>
 
 <script lang="ts">

@@ -1,39 +1,31 @@
 <template lang="pug">
-n-form(
-  :disabled="auth.loadingStatus"
-  :rules="rules"
-  label-width=100
-  @submit.prevent="emailPasswordLogin"
-)
-  n-form-item(
-    label="Email"
-    label-placement="left"
-    :required="true"
-  )
-    n-input(
-      round
-      :input-props="{ type:'email' }"
-      v-model:value="email"
-    )
-  n-form-item(
-    label="Password"
-    label-placement="left"
-    :required="true"
-  )
-    n-input(
-      round
-      type="password"
-      v-model:value="password"
-      @keyup.enter="emailPasswordLogin"
-    )
-  n-space(
-    justify="center"
-  )
-    n-button(
-      round
-      @click.prevent="emailPasswordLogin"
+q-form.login-form.q-px-xl(@submit.prevent="emailPasswordLogin")
+  .row.justify-center
+    q-input(
+      label="email"
+      v-model="email"
       :loading="auth.loadingStatus"
-    )
+      :disable="auth.loadingStatus"
+      )
+      template(v-slot:prepend)
+        tabler-mail
+  .row.justify-center
+    q-input(
+      label="password"
+      type="password"
+      v-model="password"
+      :loading="auth.loadingStatus"
+      :disable="auth.loadingStatus"
+      @keyup.enter="emailPasswordLogin"
+      )
+      template(v-slot:prepend)
+        tabler-key
+  .row.justify-center
+    q-btn.q-mt-md(
+      color="primary"
+      :disabled="auth.loadingStatus"
+      @click="emailPasswordLogin"
+      )
       | Login With Email
 </template>
 
@@ -42,6 +34,7 @@ import authStore from '@/store/auth';
 
 const auth = authStore();
 
+// TODO: Form validation
 const email = ref('');
 const password = ref('');
 

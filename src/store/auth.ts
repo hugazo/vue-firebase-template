@@ -11,8 +11,9 @@ import {
   signInWithRedirect,
   AuthProvider,
 } from 'firebase/auth';
-
 import firebaseInstance from '@/services/firebase';
+
+import { error } from '@services/notifier';
 
 import firebaseConfig from '../../firebase.json';
 
@@ -88,6 +89,8 @@ const authStore = defineStore('auth', {
       try {
         this.loading = true;
         await signInWithEmailAndPassword(auth, email, password);
+      } catch (_e) {
+        error('Can\'t log in with the provided credentials');
       } finally {
         this.loading = false;
       }

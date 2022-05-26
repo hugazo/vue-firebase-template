@@ -1,6 +1,6 @@
 <template lang="pug">
 .col
-  .row
+  .row.justify-center
     p Or Just Login With
   .row
     q-btn-group(outline)

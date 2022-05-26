@@ -12,10 +12,11 @@ import piniaPersist from 'pinia-plugin-persist';
 import router from '@services/router';
 
 // Quasar setup
-import { Quasar } from 'quasar';
-// import quasarIconSet from 'quasar/icon-set/svg-mdi-v6';
+import {
+  Quasar,
+  Notify,
+} from 'quasar';
 import '@quasar/extras/roboto-font-latin-ext/roboto-font-latin-ext.css';
-// import '@quasar/extras/mdi-v6/mdi-v6.css';
 import 'quasar/src/css/index.sass';
 
 // Base Component
@@ -25,8 +26,9 @@ import App from './App.vue';
 const app = createApp(App);
 
 app.use(Quasar, {
-  plugins: {},
-  // iconSet: quasarIconSet,
+  plugins: {
+    Notify,
+  },
 });
 
 // Add the state management to app

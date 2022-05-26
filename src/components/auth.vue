@@ -10,6 +10,12 @@ q-card.q-pa-lg.shadow-1
         email-login
       .row
         social-login
+      .row.justify-center
+        .column
+          .row
+            p Select Your Theme:
+          .row
+            theme-selector
     q-tab-panel(name="signin")
       p Signin Page
 //- div

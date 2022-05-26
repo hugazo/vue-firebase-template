@@ -1,14 +1,16 @@
 <template lang="pug">
-n-button(@click="theme.changeTheme")
-  template(#icon)
-    n-icon
-      template(v-if="theme.getTheme.name == 'Light'")
-        tabler-sun
-      template(v-if="theme.getTheme.name == 'Dark'")
-        tabler-moon
-      template(v-if="theme.getTheme.name == 'System'")
-        tabler-device-laptop
-  | {{ theme.getTheme.name }}
+q-btn.theme-selector(
+  @click.prevent="theme.changeTheme"
+  outline
+  )
+  q-icon
+    template(v-if="theme.getTheme.name == 'Light'")
+      tabler-sun
+    template(v-if="theme.getTheme.name == 'Dark'")
+      tabler-moon
+    template(v-if="theme.getTheme.name == 'System'")
+      tabler-device-laptop
+  |  {{ theme.getTheme.name }}
 </template>
 
 <script setup lang="ts">
@@ -18,7 +20,7 @@ const theme = themeStore();
 </script>
 
 <style scoped>
-.n-button {
-  width: 80px;
+.theme-selector {
+  width: 120px;
 }
 </style>

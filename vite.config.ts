@@ -6,6 +6,7 @@ import { ViteAliases } from 'vite-aliases';
 import Icons from 'unplugin-icons/vite';
 import IconsResolver from 'unplugin-icons/resolver';
 import Components from 'unplugin-vue-components/vite';
+import { QuasarResolver } from 'unplugin-vue-components/resolvers';
 import AutoImport from 'unplugin-auto-import/vite';
 import { VitePWA } from 'vite-plugin-pwa';
 import { quasar, transformAssetUrls } from '@quasar/vite-plugin';
@@ -15,7 +16,11 @@ export default defineConfig({
     'FIREBASE_',
   ],
   plugins: [
-    Vue(),
+    Vue({
+      template: {
+        transformAssetUrls,
+      },
+    }),
     quasar({
       autoImportComponentCase: 'kebab',
       sassVariables: 'src/quasar-variables.sass',
@@ -36,6 +41,7 @@ export default defineConfig({
             'tabler',
           ],
         }),
+        QuasarResolver(),
       ],
       dts: true,
     }),

@@ -1,28 +1,39 @@
-import { darkTheme, useOsTheme } from 'naive-ui';
-import { BuiltInGlobalTheme } from 'naive-ui/lib/themes/interface';
+import { Dark } from 'quasar';
 
-const osThemeRef = useOsTheme();
+type ThemeValues = boolean | 'auto';
 
-type ThemeResolver = null | BuiltInGlobalTheme;
+interface Theme {
+  name: string,
+  value: ThemeValues,
+}
+interface Themes extends Array<Theme> {}
+
+interface ThemeState {
+  themes: Themes,
+  selectedTheme: 0 | 1 | 2,
+}
 
 const themeStore = defineStore('theme', {
-  state: () => ({
-    themes: [
-      {
-        name: 'Light',
-        resolver: (): ThemeResolver => null,
-      },
-      {
-        name: 'Dark',
-        resolver: (): ThemeResolver => darkTheme,
-      },
-      {
-        name: 'System',
-        resolver: (): ThemeResolver => (osThemeRef.value === 'dark' ? darkTheme : null),
-      },
-    ],
-    selectedTheme: 0,
-  }),
+  state: () => {
+    const state: ThemeState = {
+      themes: [
+        {
+          name: 'Light',
+          value: false,
+        },
+        {
+          name: 'Dark',
+          value: true,
+        },
+        {
+          name: 'System',
+          value: 'auto',
+        },
+      ],
+      selectedTheme: 0,
+    };
+    return state;
+  },
   actions: {
     changeTheme() {
       if (this.selectedTheme < this.themes.length - 1) {
@@ -30,6 +41,11 @@ const themeStore = defineStore('theme', {
       } else {
         this.selectedTheme = 0;
       }
+      const selectedTheme = this.themes[this.selectedTheme];
+      this.loadTheme(selectedTheme.value);
+    },
+    loadTheme(value: ThemeValues) {
+      Dark.set(value);
     },
   },
   getters: {

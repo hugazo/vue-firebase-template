@@ -1,32 +1,30 @@
 <template lang="pug">
-n-space(justify="center")
-  n-text Or just log in with:
-n-space(justify="center")
-  n-button-group
-    n-button(
-      :loading="auth.loadingStatus"
-      @click="auth.signInWithGoogle"
-      )
-      template(#icon)
-        n-icon
+.col
+  .row
+    p Or Just Login With
+  .row
+    q-btn-group(outline)
+      q-btn(
+        outline
+        @click.prevent="auth.signInWithGoogle"
+        )
+        q-icon(left)
           tabler-brand-google
-      | Google
-    n-button(
-      :loading="auth.loadingStatus"
-      @click="auth.signInWithFacebook"
-      )
-      template(#icon)
-        n-icon
+        | Google
+      q-btn(
+        outline
+        @click.prevent="auth.signInWithFacebook"
+        )
+        q-icon(left)
           tabler-brand-facebook
-      | Facebook
-    n-button(
-      :loading="auth.loadingStatus"
-      @click="auth.signInWithGithub"
-      )
-      template(#icon)
-        n-icon
+        | Facebook
+      q-btn(
+        outline
+        @click.prevent="auth.signInWithGithub"
+        )
+        q-icon(left)
           tabler-brand-github
-      | Github
+        | Github
 </template>
 
 <script setup lang="ts">

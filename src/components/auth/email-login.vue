@@ -1,7 +1,9 @@
 <template lang="pug">
-q-form.login-form.q-px-xl(@submit.prevent="emailPasswordLogin")
-  .row.justify-center
-    q-input(
+q-form.full-width.q-gutter-y-md(
+  @submit.prevent="emailPasswordLogin"
+  )
+  .row
+    q-input.full-width(
       label="email"
       v-model="email"
       :loading="auth.loadingStatus"
@@ -9,8 +11,8 @@ q-form.login-form.q-px-xl(@submit.prevent="emailPasswordLogin")
       )
       template(v-slot:prepend)
         tabler-mail
-  .row.justify-center
-    q-input(
+  .row
+    q-input.full-width(
       label="password"
       type="password"
       v-model="password"
@@ -20,9 +22,9 @@ q-form.login-form.q-px-xl(@submit.prevent="emailPasswordLogin")
       )
       template(v-slot:prepend)
         tabler-key
-  .row.justify-center
-    q-btn.q-mt-md(
-      color="primary"
+  .row
+    q-btn.full-width(
+      outline
       :disabled="auth.loadingStatus"
       @click="emailPasswordLogin"
       )

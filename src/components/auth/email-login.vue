@@ -26,7 +26,7 @@ q-form.full-width.q-gutter-y-md(
     q-btn.full-width(
       outline
       :disabled="auth.loadingStatus"
-      @click="emailPasswordLogin"
+      @click.prevent="emailPasswordLogin"
       )
       | Login With Email
 </template>

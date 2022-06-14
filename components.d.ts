@@ -8,6 +8,7 @@ declare module '@vue/runtime-core' {
     Auth: typeof import('./src/components/auth.vue')['default']
     DemoComponent: typeof import('./src/components/demo-component.vue')['default']
     EmailLogin: typeof import('./src/components/auth/email-login.vue')['default']
+    EmailRegistration: typeof import('./src/components/auth/email-registration.vue')['default']
     Navbar: typeof import('./src/components/navbar/index.vue')['default']
     RoomCreation: typeof import('./src/components/rooms/roomCreation.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']

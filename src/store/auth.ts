@@ -10,6 +10,7 @@ import {
   signInWithEmailAndPassword,
   signInWithRedirect,
   AuthProvider,
+  createUserWithEmailAndPassword,
 } from 'firebase/auth';
 import firebaseInstance from '@/services/firebase';
 
@@ -81,6 +82,18 @@ const authStore = defineStore('auth', {
       try {
         this.loading = true;
         await signInWithRedirect(auth, provider);
+      } finally {
+        this.loading = false;
+      }
+    },
+    async registerWithEmailAndPassword(email: string, password: string) {
+      try {
+        this.loading = true;
+        const registeredUser = await createUserWithEmailAndPassword(auth, email, password);
+        // eslint-disable-next-line no-console
+        console.log(registeredUser);
+      } catch (_e) {
+        error('Can\'t register in with the provided credentials');
       } finally {
         this.loading = false;
       }

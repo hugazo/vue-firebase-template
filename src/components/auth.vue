@@ -16,8 +16,9 @@ q-card.q-pa-lg.shadow-1
             p Select Your Theme:
           .row
             theme-selector
-    q-tab-panel(name="signin")
-      p Signin Page
+    q-tab-panel.q-gutter-y-md(name="signin")
+      .row
+        email-registration
 //- div
 //-   n-card(
 //-     title="Welcome"

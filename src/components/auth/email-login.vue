@@ -1,6 +1,6 @@
 <template lang="pug">
 q-form.full-width.q-gutter-y-md(
-  @submit.prevent="emailPasswordLogin"
+  @submit.prevent="emailAuth"
   )
   .row
     q-input.full-width(
@@ -12,23 +12,12 @@ q-form.full-width.q-gutter-y-md(
       template(v-slot:prepend)
         tabler-mail
   .row
-    q-input.full-width(
-      label="password"
-      type="password"
-      v-model="password"
-      :loading="auth.loadingStatus"
-      :disable="auth.loadingStatus"
-      @keyup.enter="emailPasswordLogin"
-      )
-      template(v-slot:prepend)
-        tabler-key
-  .row
     q-btn.full-width(
       outline
       :disabled="auth.loadingStatus"
-      @click.prevent="emailPasswordLogin"
+      @click.prevent="emailAuth"
       )
-      | Login With Email
+      | Email Authentication
 </template>
 
 <script setup lang="ts">
@@ -38,9 +27,8 @@ const auth = authStore();
 
 // TODO: Form validation
 const email = ref('');
-const password = ref('');
 
-const emailPasswordLogin = () => auth.loginWithEmailAndPassword(email.value, password.value);
+const emailAuth = () => auth.emailAuth(email.value);
 
 const rules = {
   email: {

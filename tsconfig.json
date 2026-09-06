@@ -19,34 +19,34 @@
         "baseUrl": ".",
         "paths": {
             "@assets/*": [
-                "./src/assets/*"
+                "src/assets/*"
             ],
             "@components/*": [
-                "./src/components/*"
+                "src/components/*"
             ],
             "@pages/*": [
-                "./src/pages/*"
+                "src/pages/*"
             ],
             "@/*": [
-                "./src/*"
+                "src/*"
             ],
             "@store/*": [
-                "./src/store/*"
+                "src/store/*"
             ],
             "@layouts/*": [
-                "./src/layouts/*"
+                "src/layouts/*"
             ],
             "@services/*": [
-                "./src/services/*"
+                "src/services/*"
             ],
             "@composables/*": [
-                "./src/composables/*"
+                "src/composables/*"
             ]
         }
     },
     "include": [
         "*.d.ts",
-        "vite.config.ts",
+        "vite.config.mts",
         ".eslintrc.js",
         "src/**/*.ts",
         "src/**/*.d.ts",

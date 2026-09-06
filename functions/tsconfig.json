@@ -6,7 +6,11 @@
     "outDir": "lib",
     "sourceMap": true,
     "strict": true,
-    "target": "es2017"
+    "target": "es2022",
+    "skipLibCheck": true,
+    "lib": [
+      "es2022"
+    ]
   },
   "compileOnSave": true,
   "include": [

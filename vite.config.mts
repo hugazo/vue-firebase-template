@@ -1,3 +1,4 @@
+import { fileURLToPath } from 'node:url';
 import { defineConfig } from 'vite';
 import Vue from '@vitejs/plugin-vue';
 import Pages from 'vite-plugin-pages';
@@ -23,15 +24,16 @@ export default defineConfig({
     }),
     quasar({
       autoImportComponentCase: 'kebab',
-      sassVariables: 'src/quasar-variables.sass',
+      sassVariables: fileURLToPath(new URL('./src/quasar-variables.sass', import.meta.url)),
     }),
     Pages({
       nuxtStyle: true,
     }),
     Layouts(),
     ViteAliases({
+      prefix: '@',
       useConfig: true,
-      useTypescript: true,
+      dts: true,
     }),
     Components({
       resolvers: [
